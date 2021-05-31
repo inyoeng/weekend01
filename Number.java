@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 /*
- * ¼ıÀÚ ¸ÂÈ÷±â °ÔÀÓ!
+ * ìˆ«ì ë§íˆê¸° ê²Œì„!
  * up or down!
  */
 public class Number {
@@ -18,15 +18,16 @@ public class Number {
 		boolean game = true;
 		int count = 0;
 		
-		System.out.println("¼ıÀÚ ¸ÂÈ÷±â °ÔÀÓ START!");
-		System.out.println("·¹º§À» ÀÔ·ÂÇÏ¼¼¿ä! >>");
+		System.out.println("ìˆ«ì ë§íˆê¸° ê²Œì„ START!");
+		System.out.println("ë ˆë²¨ì„ ì…ë ¥í•˜ì„¸ìš”! >>");
 		int level = s.nextInt();
+		int go = 0
 		level = 10 - level;
 		
 		while (game) {
 			
 			System.out.println();
-			System.out.println("0~10»çÀÌÀÇ ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä! >>");
+			System.out.println("0~10ì‚¬ì´ì˜ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”! >>");
 			int user = s.nextInt(10);
 			
 			if (com == user) {
@@ -35,20 +36,26 @@ public class Number {
 			}
 			else if(com > user) {
 				if(level == count) {
-					System.out.println("°ÔÀÓ¿À¹ö...");
+					System.out.println("ê²Œì„ì˜¤ë²„...");
 					game = false;
 				}else {
-					System.out.println("ÀÛ½À´Ï´Ù. ´õ Å« ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä!");
+					System.out.println("ì‘ìŠµë‹ˆë‹¤. ë” í° ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”!");
 					System.out.println();
 					count +=1;
 				}
 			}
 			else if(com <user) {
 				if(level == count) {
-					System.out.println("°ÔÀÓ¿À¹ö...");
-					game = false;
+					System.out.println("ê²Œì„ì˜¤ë²„...");
+					System.out.println("Press 1 to restart, 2 to quit.: ");
+					int go = s.nextInt();
+					if(go == 2){
+						game = false;
+					}else{
+						count+=1;
+					}
 				}else {
-					System.out.println("Å®´Ï´Ù. ´õ ÀÛÀº ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä!");
+					System.out.println("í½ë‹ˆë‹¤. ë” ì‘ì€ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”!");
 					System.out.println();
 					count += 1;
 				}
