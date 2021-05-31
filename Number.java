@@ -21,7 +21,7 @@ public class Number {
 		System.out.println("숫자 맞히기 게임 START!");
 		System.out.println("레벨을 입력하세요! >>");
 		int level = s.nextInt();
-		int go = 0
+		int go = 0;
 		level = 10 - level;
 		
 		while (game) {
@@ -48,7 +48,7 @@ public class Number {
 				if(level == count) {
 					System.out.println("게임오버...");
 					System.out.println("Press 1 to restart, 2 to quit.: ");
-					int go = s.nextInt();
+					go = s.nextInt();
 					if(go == 2){
 						game = false;
 					}else{
